@@ -1,0 +1,113 @@
+<form [formGroup]="CreateUserRegistration" (ngSubmit)="onCreateSubmit()">
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase"><strong>Registration</strong> form</h3>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline form-group starshow ">
+                        <label class="form-label" for="firstName">First name</label>
+                        <input type="text" id="firstName" formControlName="firstName" class="form-control form-control-lg required" />
+                        <!-- <div *ngIf="(CreateUserRegistration.controls['Email'].dirty || CreateUserRegistration.controls['Email'].touched) && CreateUserRegistration.controls['Email'].invalid">This is Required Field</div> -->
+                        <!-- <div *ngIf="CreateUserRegistration.controls['Email'].errors.required">This is Required Field</div> -->
+                        <label class="text-danger" *ngIf="(CreateUserRegistration.controls['firstName'].dirty || CreateUserRegistration.controls['firstName'].touched) && CreateUserRegistration.controls['firstName'].invalid">This is Required Field</label>
+
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline form-group starshow ">
+                        <label class="form-label" for="lastName">Last name</label>
+                        <input type="text" id="lastName" formControlName="lastName" class="form-control form-control-lg required" />
+                        <label class="text-danger" *ngIf="(CreateUserRegistration.controls['lastName'].dirty || CreateUserRegistration.controls['lastName'].touched) && CreateUserRegistration.controls['lastName'].invalid">This is Required Field</label>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                    <h6 class="mb-0 me-4">Gender: </h6>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="female" value="female"  />
+                      <label class="form-check-label" for="gender">Female</label>
+                    </div>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="male" value="male"/>
+                      <label class="form-check-label" for="gender">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-0">
+                      <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="gender"/>
+                      <label class="form-check-label" for="gender">Other</label>
+                    </div>
+                  </div>
+                  <div class="row ">
+                    <div class="row form-group mb-4">
+                      <select class="custom-select mb-3" formControlName="roleid" >
+                        <option value="">choose role</option>
+                        <option *ngFor="let row of roleslist" [ngValue]="row.id">{{ row.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4 form-group starshow ">
+                    <label class="form-label" for="userCity">City</label>
+                    <input type="text" id="userCity" formControlName="userCity" class="form-control form-control-lg required " />
+                    <label class="text-danger" *ngIf="(CreateUserRegistration.controls['userCity'].dirty || CreateUserRegistration.controls['userCity'].touched) && CreateUserRegistration.controls['userCity'].invalid">This is Required Field</label>
+
+                  </div>
+                  <div class="form-outline mb-4 form-group starshow ">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" formControlName="email" class="form-control form-control-lg required" />
+                    <label class="text-danger" *ngIf="(CreateUserRegistration.controls['email'].dirty || CreateUserRegistration.controls['email'].touched) && CreateUserRegistration.controls['email'].invalid">Invalid Email Address</label>
+                  </div>
+                  <!-- <div formGroupName="Passwords"> -->
+                    <div class="form-outline mb-4 form-group starshow ">
+                      <label class="form-label" for="password">Password</label>
+                      <input type="password" id="password" formControlName="password" class="form-control form-control-lg required"  />
+                      <label class="text-danger" *ngIf="(CreateUserRegistration.controls['password'].dirty || CreateUserRegistration.controls['password'].touched) && CreateUserRegistration.controls['password'].invalid">This is Required Field </label>
+                      <label class="text-danger" *ngIf="(CreateUserRegistration.controls['password'].dirty || CreateUserRegistration.controls['password'].touched) && CreateUserRegistration.controls['password'].invalid "> minimum length is 4</label>
+
+                    </div>
+                    <div class="form-outline mb-4 form-group starshow">
+                      <label class="form-label" for="confirmPassword">ConfirmPassowrd</label>
+                      <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control form-control-lg  required" />
+                      <!-- <label class="text-danger" *ngIf="(CreateUserRegistration.controls['Passwords.ConfirmPassowrd'].dirty || CreateUserRegistration.controls['Passwords.ConfirmPassowrd'].touched) && CreateUserRegistration.controls['Passwords.ConfirmPassowrd'].invalid">This is Required Field</label> -->
+                    <label class="text-danger" *ngIf="(CreateUserRegistration.controls['confirmPassword'].dirty || CreateUserRegistration.controls['confirmPassword'].touched) && CreateUserRegistration.controls['confirmPassword'].invalid">This is required field </label>
+                    <label class="text-danger" *ngIf="(CreateUserRegistration.controls['confirmPassword'].dirty || CreateUserRegistration.controls['confirmPassword'].touched) && CreateUserRegistration.controls['confirmPassword'].errors?.['passwordMismatch']"> Confirm Password doesnot match</label>
+
+                    </div>
+
+                  <!-- </div> -->
+                  <div class="form-check mb-3  formGroup">
+                    <input class="form-check-input" type="checkbox" name="agree" id="agree">
+                    <label class="form-check-label" for="agree">I agree with the <a href="#">Terms & Conditions</a>.</label>
+                  </div>
+                  <div class="card-footer px-lg-5 py-lg-4">
+                    <div class="text-sm text-muted">Already have an account? <button  routerLink="/user/Login"
+                      class="m-1 btn btn-primary btn-lg"  >Login</button></div>
+                      <!-- <a (click)="user_login()">Login</a>.</div> -->
+
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-danger btn-lg">Reset all</button>
+                    <button type="submit" class="btn btn-primary btn-lg ms-2"[disabled]="!CreateUserRegistration.valid">Sign Up</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

@@ -1,0 +1,105 @@
+<!-- <nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/user/Login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white "  routerLink="/user/Registration">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+<!-- <header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+
+      <ul class="nav col-12 col-lg-auto  me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Products</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Contact Us</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">About Us</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+      </form>
+
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-light me-2" routerLink="/user/Login">Login</button>
+        <button type="button" class="btn btn-warning" routerLink="/user/Registration">Sign-up</button>
+      </div>
+    </div>
+  </div>
+</header> -->
+
+<div class="login-nabar">
+  <nav class="navbar navbar-expand-lg navbar-daek bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h5 class="my-0 mr-md-auto font-weight-normal">
+        <app-header></app-header>
+      </h5>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Shopping</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link text-white"  routerLink="/user/profuct">Products</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link text-white" >Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <!-- <a class="nav-link text-white" routerlink="/user/registration">About Us</a> -->
+            <a class="nav-link text-white "  routerLink="/user/Registration">register</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+
+          <button class="btn btn-success login-btn" >Sign Up</button>
+          <input class="form-control me-2 mx-2 "  type="search" placeholder="Search" aria-label="Search">
+          <button class="btn  btn-primary login-btn mx-2 " type="submit" routerLink="/user/Login">Login</button>
+          <button class="btn  btn-warning login-btn" routerLink="/user/Registration">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <app-shopping-cart></app-shopping-cart>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

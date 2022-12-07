@@ -1,0 +1,98 @@
+<nav class="navbar navbar-dark bg-dark ">
+<a class="navbar-brand text-white ">JWT Auth System</a>
+<p class="navbar-brand text-white ">{{loginusername}}</p>
+<p class="navbar-brand text-white ">{{rolename}}</p>
+<button class="btn btn-danger my-2 my-sm-0 " (click)="OnLogout()">Logout</button>
+</nav>
+
+<div class="container">
+  <table class="table table-hover" *ngIf="showResult">
+      <thead>
+          <tr>
+
+              <th>ID</th>
+              <th>City</th>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>PhoneNumber</th>
+          </tr>
+      </thead>
+      <tbody>
+           <tr >
+             <!-- <td>{{userresult.id}}</td> -->
+              <td>{{userresult.id}}</td>
+              <td>{{userresult.city}}</td>
+              <td>{{userresult.userName}}</td>
+              <td>{{userresult.email}}</td>
+              <td>{{userresult.phoneNumber}}</td>
+           </tr>
+      </tbody>
+
+  </table>
+  <div *ngIf="showpagenumber">
+    <pagination-controls id="listing_paginatioin" [maxSize]="6" [directionLinks]="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+<!-- <div class="container" *ngIf="showAlertAdmin">
+  <div class="row ">
+    <div class=" form-group col-md-6 mb-4">
+      <label>UserName</label>
+      <input type="text" [disabled]="true"  [(ngModel)]="loginusername"/>
+    </div>
+    <div class=" form-group col-md-6 mb-4">
+      <label>RoleName</label>
+      <input type="text" [disabled]="true"  [(ngModel)]="rolename"/>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="showAlertuser">
+  <div class="row ">
+    <div class=" form-group col-md-6 mb-4">
+      <label>UserName</label>
+      <input type="text" [disabled]="true"  [(ngModel)]="loginusername"/>
+    </div>
+    <div class=" form-group col-md-6 mb-4">
+      <label>RoleName</label>
+      <input type="text" [disabled]="true"  [(ngModel)]="rolename"/>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="showAlertcustomer">
+  <div class="row ">
+    <div class=" form-group col-md-6 mb-4">
+      <label>UserName</label>
+      <input type="text" [disabled]="true"  [(ngModel)]="loginusername"/>
+    </div>
+    <div class=" form-group col-md-6 mb-4">
+      <label>RoleName</label>
+      <input type="text" [disabled]="true"  [(ngModel)]="rolename"/>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 offset-0" *ngIf="showAlertAdmin">
+          <div class="box-admin bg-light">
+            <label class="mb-2 mx-2">UserNameadmin</label>
+            <input type="text" [disabled]="true"  [(ngModel)]="loginusername"/>
+            <label class="mb-2 mx-2">RoleName</label>
+            <input type="text" [disabled]="true"  [(ngModel)]="rolename"/>
+          </div>
+      </div>
+      <div class="col-md-4 offset-4" *ngIf="showAlertuser">
+          <div class="box-admin bg-light">
+            <label class="mb-2 mx-2">UserNameuser</label>
+            <input type="text" [disabled]="true"  [(ngModel)]="loginusername"/>
+            <label class="mb-2 mx-2">RoleName</label>
+            <input type="text" [disabled]="true"  [(ngModel)]="rolename"/>
+          </div>
+      </div>
+      <div class="col-md-4 offset-8" *ngIf="showAlertcustomer">
+          <div class="box-admin bg-light">
+            <label class="mb-2 mx-2">UserName</label>
+            <input type="text" [disabled]="true"  [(ngModel)]="loginusername"/>
+            <label class="mb-2 mx-2">RoleName</label>
+            <input type="text" [disabled]="true"  [(ngModel)]="rolename"/>
+          </div>
+      </div>
+  </div>

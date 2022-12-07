@@ -1,0 +1,58 @@
+
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+            class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form [formGroup]="LoginForm" (ngSubmit)="onCreateSubmit()">
+            <!-- Email input -->
+            <div class="form-outline mb-4 form-group starshow ">
+              <label class="form-label" for="email">Email address</label>
+              <input type="email" id="email" formControlName="email"  class="form-control form-control-lg required " placeholder="Enter Email" />
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4 form-group starshow">
+              <label class="form-label" for="password">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control form-control-lg required " placeholder="Enter Password" />
+            </div>
+
+            <div class="d-flex justify-content-around align-items-center mb-4">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                <label class="form-check-label" for="form1Example3"> Remember me </label>
+              </div>
+              <a href="#!">Forgot password?</a>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="">Sign in</button>
+            <div class="card-footer px-lg-5 py-lg-4">
+              <div class="text-sm text-muted">Don't have an account? <button  routerLink="/user/Registration"
+                class="m-1 btn btn-primary btn-lg"  >Registration</button></div>
+                <!-- <a (click)="user_login()">Login</a>.</div> -->
+
+            </div>
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+
+
+            <a class="btn btn-primary btn-lg btn-block my-4" style="text-align: center; width: 300px;background-color: #3b5998" href="#!"
+              role="button">
+              <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+            </a>
+            <a class="btn btn-primary btn-lg btn-block my-4" style="text-align: center; width: 300px;  background-color: #55acee" href="#!"
+              role="button">
+              <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
